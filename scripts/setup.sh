@@ -4,6 +4,8 @@
 
 export PATH="/home/$USER/.local/bin:$PATH"
 
+sudo apt update && sudo apt upgrade
+
 # install github cli
 (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
 	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
@@ -23,9 +25,9 @@ sudo apt-get install golang byobu neovim
 # python
 sudo apt-get install -y -qq software-properties-common
 sudo add-apt-repository -y ppa:deadsnakes/ppa
-sudo apt-get install -y -qq python3.13-full python3.13-dev
+sudo apt-get install -y -qq python3.13-full python3.13-dev python3.12-full python3.12-dev
 
-python3.13 -m venv .venv
+python3.12 -m venv .venv
 . .venv/bin/activate
 
 pip install -U pip
@@ -40,3 +42,5 @@ pip install -U matplotlib
 pip install -U pandas
 pip install -U huggingface
 pip install -U datasets
+
+pip install -U jax-smi
